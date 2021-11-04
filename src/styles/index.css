@@ -1,0 +1,74 @@
+*{
+  box-sizing: border-box;
+  overflow:hidden;
+
+}
+
+#imagen {
+  position: absolute;
+}
+
+.App {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.body {
+  position: relative;
+}
+
+.table{
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-top: 45vh;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.table1{
+  padding: 10px;
+  width: 80%;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 45vh;
+  margin-left: 10vw;
+  border-radius: 20px;
+}
+
+button {
+  margin-left: 10px;
+  width: 150px;
+  height: 40px;
+  border-radius: 40px;
+  border: 5px solid;
+  border-color: rgb(148, 10, 10);
+  background-color: red;  
+  font-size: 1.5em;
+}
+
+.btnEntrar {
+  padding-bottom: 45px;
+  width: 200px;
+  height: 60px;
+  border-radius: 40px;
+  border: 5px solid;
+  border-color: rgb(148, 10, 10);
+  background-color: red;  
+  position: relative;
+  margin-top: 50vh;
+  margin-left: 44vw;
+  font-size: 1.5em;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.boxButtons{
+  display: flex;
+  justify-content: end;
+}
+
+.textLabel{
+  font-size: 1.5em;
+  font-weight: bold;
+}
