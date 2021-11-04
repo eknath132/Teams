@@ -27,8 +27,8 @@ const EquipoAgregar = ()  => {
                 </div>
                 </div>
                 <div className="boxButtons">
-                    <button className="btn btn-danger" onClick={handdleAtras}>Atras</button>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button className="btn btn-danger btns" onClick={handdleAtras}>Atras</button>
+                    <button type="submit" className="btn btn-primary btns">Submit</button>
                 </div>
           </form>
   )
