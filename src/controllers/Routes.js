@@ -4,7 +4,7 @@ import Home from "../pages/Home";
 import Equipo from "../pages/Equipo";
 import EquipoAgregar from "../pages/EquipoAgregar";
 import EquipoEditar from "../pages/EquipoEditar";
-
+import Jugadores from "../pages/TablaJugadores.js";
 
 
 
@@ -15,7 +15,7 @@ const ControllerRoute = () => {
         <Route path="equipo" element={<Equipo />} />
         <Route path="nuevoEquipo" element={<EquipoAgregar />} />
         <Route path="Equipo/:id" element={<EquipoEditar />} />
-
+        <Route path="jugadores" element={<Jugadores />} />
       </Routes>
   );
 }

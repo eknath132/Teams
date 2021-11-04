@@ -4,33 +4,30 @@ import { useNavigate } from 'react-router-dom'
 const arrays = [ 
   {
     id: 1,
-    name: 'Equipo1',
-    zona: 'Zona1'
+    codEquipo: 6,
+    nombre: 'Alberto',
+    apellido: 'Lopez'
   },
   {
     id: 2,
-    name: 'Equipo2',
-    zona: 'Zona2'
-  },
-  {
+    codEquipo: 6,
+    nombre: 'Martin',
+    apellido: 'Fernandez'
+  },{
     id: 3,
-    name: 'Equipo3',
-    zona: 'Zona3'
-  },
-  {
+    codEquipo: 6,
+    nombre: 'Rogelio',
+    apellido: 'Perez'
+  },{
     id: 4,
-    name: 'Equipo4',
-    zona: 'Zona4'
+    codEquipo: 6,
+    nombre: 'Pablo',
+    apellido: 'Godoy'
   },
-  {
-    id: 5,
-    name: 'Equipo5',
-    zona: 'Zona5'
-  }
 ]
 
 
-const Equipo = ()  => {
+const Jugadores = ()  => {
 
     const history = useNavigate()
 
@@ -40,21 +37,19 @@ const Equipo = ()  => {
 
 
   const handdleAdd = () => {
-    history('/nuevoEquipo')
+    history('/agregarJugador')
   }
   
-  const handdleEdit = (id) => {
-    console.log('id', id)
-    history(`/equipo/${id}`)
+  const handdleEdit = () => {
+    setEditar(true)
   }
   
   const handdleRemove = () => {
-    console.log('Se elimina un equipo')
+    console.log('Se elimina un jugador')
   }
   
   const handdlePlantel = () => {
-    console.log('Se ve el plantel')
-    history('/jugadores');
+    console.log('Se ve el plantel');
   }
 
   const handdleAtras = () => {
@@ -64,22 +59,14 @@ const Equipo = ()  => {
   }
   return (
       <div className="body">
-        <div className="contAgregar">
-          <button type="button" className="btn btnAgregar" onClick={handdleAdd}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
-              <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5z"/>
-              <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
-            </svg>
-            <span className="textAgregar"> Agregar </span>
-          </button>
-        </div> 
 
         <table className="table">
             <thead>
                 <tr>
                 <th scope="col">#</th>
-                <th scope="col">NOMBRE DE EQUIPO</th>
-                <th scope="col">ZONA</th>
+                <th scope="col">CODIGO DE EQUIPO</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">APELLIDO</th>
                 <th className="text-center" scope="col">ACCIONES</th>
 
                 </tr>
@@ -90,10 +77,11 @@ const Equipo = ()  => {
 
                     <tr id={array.id}>
                     <th scope="row">{array.id}</th>
-                    <td>{array.name}</td>
-                    <td>{array.zona}</td>
+                    <td>{array.codEquipo}</td>
+                    <td>{array.nombre}</td>
+                    <td>{array.apellido}</td>
                     <td className="text-center"> 
-                        <button type="button" className="btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar" onClick={e => handdleEdit(array.id)} > 
+                    <button type="button" className="btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar" onClick={e => handdleEdit(array.id)} > 
                           <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           width="20" 
@@ -116,13 +104,6 @@ const Equipo = ()  => {
                               <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
                           </svg>
                         </button>
-                        <button type="button" className="btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Ver plantel" onClick={handdlePlantel}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
-                          <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-                          <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-                        </svg>
-                        </button>
-
                     </td>
                 </tr> 
                 ))
@@ -133,4 +114,4 @@ const Equipo = ()  => {
   );
 }
 
-export default Equipo;
+export default Jugadores;
