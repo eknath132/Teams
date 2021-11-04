@@ -15,6 +15,8 @@
 }
 .body {
   position: relative;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .table{
@@ -22,6 +24,28 @@
   margin-top: 45vh;
   text-align: center;
   border-radius: 20px;
+
+}
+
+.contAgregar{
+  margin-top: 40vh;
+  margin-bottom: -43vh;
+}
+
+.btnAgregar{
+  width: 150px;
+  color: white;
+  cursor: pointer;
+  border: 1px solid;
+}
+
+.textAgregar{
+  color: white !important;
+}
+
+.btnAgregar:hover{
+  width: 150px;
+  color: wheat;
 }
 
 .table1{
@@ -36,7 +60,7 @@
 
 button {
   margin-left: 10px;
-  width: 150px;
+  width: 50px;
   height: 40px;
   border-radius: 40px;
   border: 5px solid;
@@ -71,4 +95,8 @@ button {
 .textLabel{
   font-size: 1.5em;
   font-weight: bold;
+}
+
+.btns{
+  width: 150px;
 }
