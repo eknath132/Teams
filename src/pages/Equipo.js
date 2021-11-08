@@ -1,39 +1,40 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
+import { Equipo } from '../services/service'
 
-const arrays = [ 
-  {
-    id: 1,
-    name: 'Equipo1',
-    zona: 'Zona1'
-  },
-  {
-    id: 2,
-    name: 'Equipo2',
-    zona: 'Zona2'
-  },
-  {
-    id: 3,
-    name: 'Equipo3',
-    zona: 'Zona3'
-  },
-  {
-    id: 4,
-    name: 'Equipo4',
-    zona: 'Zona4'
-  },
-  {
-    id: 5,
-    name: 'Equipo5',
-    zona: 'Zona5'
-  }
-]
+// const arrays = [ 
+//   {
+//     id: 1,
+//     name: 'Equipo1',
+//     zona: 'Zona1'
+//   },
+//   {
+//     id: 2,
+//     name: 'Equipo2',
+//     zona: 'Zona2'
+//   },
+//   {
+//     id: 3,
+//     name: 'Equipo3',
+//     zona: 'Zona3'
+//   },
+//   {
+//     id: 4,
+//     name: 'Equipo4',
+//     zona: 'Zona4'
+//   },
+//   {
+//     id: 5,
+//     name: 'Equipo5',
+//     zona: 'Zona5'
+//   }
+// ]
 
 
 const Equipo = ()  => {
 
-    const history = useNavigate()
-
+  const history = useNavigate()
+  const equipo = Equipo()
   const [agregar, setAgregar] = useState(false)
   const [editar, setEditar] = useState(false)
   const [eliminar, setEliminar] = useState(false)
@@ -86,7 +87,7 @@ const Equipo = ()  => {
             </thead>
             <tbody>
                 {
-                arrays.map(array => (
+                equipo.map(array => (
 
                     <tr id={array.id}>
                     <th scope="row">{array.id}</th>
